@@ -1,0 +1,2 @@
+# Optional spatial-block OrdinaryKriging backend
+pykrige
