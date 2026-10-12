@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\caption{Spatial-anomaly reconstruction under strict LOSO-CV. At each timestamp, the cross-station mean was removed from both observations and predictions. Skill is relative to a zero-spatial-anomaly field; positive values indicate improvement over the contemporaneous spatial-mean baseline.}
+\label{tab:spatial_anomaly_skill}
+\small
+\begin{tabular}{llrr}
+\toprule
+Pollutant & Method & Spatial-anomaly RMSE (95\% CI) & Spatial-anomaly skill (\%, 95\% CI) \\
+\midrule
+$\mathrm{NO}_2$ & SpatialMean & 3.802 (3.445, 4.119) & 0.00 (0.00, 0.00) \\
+$\mathrm{NO}_2$ & IDW & 3.810 (3.438, 4.144) & -0.42 (-2.92, 2.29) \\
+$\mathrm{NO}_2$ & GFSC-UNet-HM & 3.853 (3.513, 4.159) & -2.71 (-9.74, 3.49) \\
+\addlinespace
+$\mathrm{O}_3$ & SpatialMean & 4.468 (2.651, 5.846) & 0.00 (0.00, 0.00) \\
+$\mathrm{O}_3$ & IDW & 4.619 (2.553, 6.182) & -6.88 (-14.86, 8.43) \\
+$\mathrm{O}_3$ & GFSC-UNet-HM & 4.396 (2.585, 5.761) & 3.19 (-1.89, 9.56) \\
+\addlinespace
+$\mathrm{PM}_{2.5}$ & SpatialMean & 9.762 (7.635, 11.494) & 0.00 (0.00, 0.00) \\
+$\mathrm{PM}_{2.5}$ & IDW & 9.872 (7.768, 11.540) & -2.26 (-5.47, 0.09) \\
+$\mathrm{PM}_{2.5}$ & GFSC-UNet-HM & 9.904 (8.034, 11.458) & -2.93 (-10.93, 0.76) \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\parbox{0.98\textwidth}{\footnotesize Values in parentheses are 95\% percentile intervals from 5,000 paired circular moving-block bootstrap replicates with a block length of 24 h. SpatialMean is represented by the zero-spatial-anomaly field; its skill is therefore zero by definition.}
+\end{table*}

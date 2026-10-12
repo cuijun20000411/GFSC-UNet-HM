@@ -1,0 +1,16 @@
+variant,pollutant,fold,complete
+D3HM,no2,0,True
+D3HM,no2,1,True
+D3HM,no2,2,True
+D3HM,no2,3,True
+D3HM,no2,4,True
+D3HM,o3,0,True
+D3HM,o3,1,True
+D3HM,o3,2,True
+D3HM,o3,3,True
+D3HM,o3,4,True
+D3HM,pm25,0,True
+D3HM,pm25,1,True
+D3HM,pm25,2,True
+D3HM,pm25,3,True
+D3HM,pm25,4,True

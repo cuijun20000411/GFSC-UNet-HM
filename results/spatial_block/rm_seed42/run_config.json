@@ -1,0 +1,69 @@
+{
+  "args": {
+    "a10_root": "/etc/cj/boundary/d3_direct_ablation_final_strict_v1",
+    "batch_size": 32,
+    "blocks": 5,
+    "coordinates_csv": "",
+    "d3_root": "/etc/cj/boundary/f3_direct_ablation_final_strict_v1",
+    "data_root": "/etc/cj/boundary/duoyuan/data",
+    "epochs": 150,
+    "fold_start": 0,
+    "k_neighbors": 8,
+    "log_interval": 10,
+    "max_folds": 0,
+    "ml_jobs": 4,
+    "models": "D3,D3A10,SpatialMean,IDW,KNN,ExtraTrees",
+    "num_workers": 4,
+    "output": "/etc/cj/boundary/d3_spatial_block_validation_v1",
+    "patience": 15,
+    "pollutants": "no2,o3,pm25",
+    "preflight": false,
+    "seed": 42,
+    "split_seed": 42,
+    "summary_only": false,
+    "trees": 300,
+    "validation_mask_seed": 42
+  },
+  "covariates": "precomputed covariates remain available over the full domain; D3 groups frozen",
+  "data": {
+    "no2": {
+      "conc_img_raw.npy": "3dbbc9430be895dfcd5d77adea0e8b816d0fb1f47c6fb59d8eab874f28569717",
+      "coord_img.npy": "6aed157e0cc31cd5740dfce53b2e07820759a96b844a3aeeff17e5c06168ed83",
+      "cov_img_full.npy": "441b9ea4fdeef6e6d7047b46c43ab31445c2cf6fb57d3e6244c3d13b45052c5a",
+      "station_positions.npy": "f13954f024f987ec7c27ecf1274ac45f77c95bbed3af7fe78ed435023eeca09e",
+      "time_splits.npy": "6e311712e665b48274f79366aca9289dcc899152d5f20ffb5e4385f7bd98f1e4",
+      "valid_grid_mask.npy": "9a5cc949c1d1b5debff486868d6dd38d18014d065c3da26d31806783a49685cf",
+      "valid_time_indices.npy": "4655e6187680a4dc6c07976921bfe1ce80a63b2b995ca485cc7bfa961eafe906"
+    },
+    "o3": {
+      "conc_img_raw.npy": "de43bf315ceee1fb45eb7b06f0c36e1b1684a5a7dc0e60f788f2c7b331ff40f0",
+      "coord_img.npy": "6aed157e0cc31cd5740dfce53b2e07820759a96b844a3aeeff17e5c06168ed83",
+      "cov_img_full.npy": "f00c2e79984a1ce89a573e3a6fefee29524912ae3b3d951376920b56488596c1",
+      "station_positions.npy": "f13954f024f987ec7c27ecf1274ac45f77c95bbed3af7fe78ed435023eeca09e",
+      "time_splits.npy": "6e311712e665b48274f79366aca9289dcc899152d5f20ffb5e4385f7bd98f1e4",
+      "valid_grid_mask.npy": "9a5cc949c1d1b5debff486868d6dd38d18014d065c3da26d31806783a49685cf",
+      "valid_time_indices.npy": "4655e6187680a4dc6c07976921bfe1ce80a63b2b995ca485cc7bfa961eafe906"
+    },
+    "pm25": {
+      "conc_img_raw.npy": "8fff58e3e53894091bc1b4f84781e9143c89c0866fc008283ca26ecf3ef359bf",
+      "coord_img.npy": "6aed157e0cc31cd5740dfce53b2e07820759a96b844a3aeeff17e5c06168ed83",
+      "cov_img_full.npy": "e364f0ff7a801ad53ab9c3612da7850c166d7fb4ee527411aae340fd10fbc618",
+      "station_positions.npy": "f13954f024f987ec7c27ecf1274ac45f77c95bbed3af7fe78ed435023eeca09e",
+      "time_splits.npy": "6e311712e665b48274f79366aca9289dcc899152d5f20ffb5e4385f7bd98f1e4",
+      "valid_grid_mask.npy": "9a5cc949c1d1b5debff486868d6dd38d18014d065c3da26d31806783a49685cf",
+      "valid_time_indices.npy": "4655e6187680a4dc6c07976921bfe1ce80a63b2b995ca485cc7bfa961eafe906"
+    }
+  },
+  "protocol": "retrain after excluding whole block from concentration inputs, train/validation labels and scaler",
+  "sources": {
+    "d3_direct_ablation_final_strict.py": "c8c67fa0d810dff315d575b6c8a3fd300ddd4cbb502a93164f2cf60498f119bc",
+    "d3_multiseed_final_strict.py": "e9805030f3d813854711239ad8fea0d96258c83c5000ce3138ab1b4c362a79c5",
+    "d3_spatial_block_final_strict.py": "e9dd95a4ecdfab2cca5fe0fe6570c2f010ef77b354e8c8d4fecfde9596a08be8",
+    "d3_validation_common.py": "5010f2885abe201e1f2a9a934f256dff314298db7be1ed13b5364b723f29a7fd",
+    "f3_direct_ablation_final_strict.py": "b7e817e0dd933cdaf78a42451fbfe13e01b9e051495486323576be11eb69ffbd",
+    "fusion_final_strict.py": "24c25be66e808f59bd2b3e059b22a88f6bf3387ef425fba55ecc316e2aed89ee",
+    "rh4_final_strict_light.py": "bd6ee9fb129db6d0535ed4966cee0c15d0e27bfaaeef1d4a30517de120d3fc05"
+  },
+  "split_signature": "6bb6aedbc907b808706e73c9e8ed0cbbdf873d0db8a67afc2b3a788ef38bdd1b",
+  "version": "d3_validation_20260915_v1"
+}

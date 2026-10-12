@@ -1,0 +1,7 @@
+competitor,n_aligned_rows,n_pollutants,n_stations,max_truth_abs_diff,key_match
+IDW,17820,3,55,2.842170943040401e-14,True
+RandomForest,17820,3,55,2.842170943040401e-14,True
+ExtraTrees,17820,3,55,2.842170943040401e-14,True
+XGBoost,17820,3,55,2.842170943040401e-14,True
+PConvUNetCov,17820,3,55,2.842170943040401e-14,True
+D3,17820,3,55,0.0,True

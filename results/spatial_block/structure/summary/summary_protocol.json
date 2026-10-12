@@ -1,0 +1,54 @@
+{
+  "variants": {
+    "FULL": {
+      "code": "FULL",
+      "description": "Complete GFSC-UNet-HM",
+      "model_kind": "full",
+      "use_covariates": true,
+      "bottleneck_fusion": true,
+      "decoder_fusion": true
+    },
+    "NO_COV": {
+      "code": "NO_COV",
+      "description": "Remove every auxiliary-variable path",
+      "model_kind": "no_cov",
+      "use_covariates": false,
+      "bottleneck_fusion": false,
+      "decoder_fusion": false
+    },
+    "UNGROUPED": {
+      "code": "UNGROUPED",
+      "description": "Parameter-matched single covariate encoder",
+      "model_kind": "ungrouped",
+      "use_covariates": true,
+      "bottleneck_fusion": true,
+      "decoder_fusion": true
+    },
+    "DIRECT_CONCAT": {
+      "code": "DIRECT_CONCAT",
+      "description": "Grouped covariate encoding concatenated at the observation input",
+      "model_kind": "direct_concat",
+      "use_covariates": true,
+      "bottleneck_fusion": false,
+      "decoder_fusion": false
+    },
+    "NO_GATE": {
+      "code": "NO_GATE",
+      "description": "Three-scale residual conditioning without sigmoid gates",
+      "model_kind": "no_gate",
+      "use_covariates": true,
+      "bottleneck_fusion": true,
+      "decoder_fusion": true
+    }
+  },
+  "paired_unit": "held-out station RMSE over all test times",
+  "test": "two-sided Wilcoxon signed-rank",
+  "multiplicity": "Holm adjustment across 4 ablations x 3 pollutants = 12 tests",
+  "prediction_paths": {
+    "FULL": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/spatial_block/D3HM/predictions/test_predictions.csv",
+    "NO_COV": "/etc/cj/boundary/gfsc_unet_d3hm_a10_hybrid_mask_v1/spatial_block/D3HMA10/predictions/test_predictions.csv",
+    "UNGROUPED": "/etc/cj/boundary/gfsc_unet_hm_spatial_structure_ablation_v1/UNGROUPED/spatial_block/D3HM/predictions/test_predictions.csv",
+    "DIRECT_CONCAT": "/etc/cj/boundary/gfsc_unet_hm_spatial_structure_ablation_v1/DIRECT_CONCAT/spatial_block/D3HM/predictions/test_predictions.csv",
+    "NO_GATE": "/etc/cj/boundary/gfsc_unet_hm_spatial_structure_ablation_v1/NO_GATE/spatial_block/D3HM/predictions/test_predictions.csv"
+  }
+}

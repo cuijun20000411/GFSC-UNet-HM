@@ -1,0 +1,41 @@
+\begin{table*}[t]
+\centering
+\caption{Station-pair concentration-contrast reconstruction under strict LOSO-CV. The high-contrast stratum comprises the pollutant-specific upper quartile of the absolute observed station-pair difference.}
+\label{tab:pairwise_contrast}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lllrrr}
+\toprule
+Pollutant & Stratum & Method & Pairwise RMSE (95\% CI) & Pearson $r$ (95\% CI) & Skill (\%, 95\% CI) \\
+\midrule
+$\mathrm{NO}_2$ & All pairs & SpatialMean & 5.426 (4.917, 5.880) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{NO}_2$ & All pairs & IDW & 5.438 (4.907, 5.915) & 0.087 (0.013, 0.151) & -0.42 (-2.92, 2.29) \\
+$\mathrm{NO}_2$ & All pairs & GFSC-UNet-HM & 5.499 (5.014, 5.936) & 0.214 (0.113, 0.288) & -2.71 (-9.74, 3.49) \\
+\addlinespace
+$\mathrm{NO}_2$ & Top 25\% $|\Delta y|$ & SpatialMean & 9.623 (9.102, 10.216) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{NO}_2$ & Top 25\% $|\Delta y|$ & IDW & 9.524 (8.917, 10.224) & 0.141 (0.025, 0.250) & 2.05 (-0.86, 5.24) \\
+$\mathrm{NO}_2$ & Top 25\% $|\Delta y|$ & GFSC-UNet-HM & 9.122 (8.467, 9.841) & 0.318 (0.174, 0.415) & 10.14 (2.15, 17.49) \\
+\addlinespace
+\midrule
+$\mathrm{O}_3$ & All pairs & SpatialMean & 6.377 (3.783, 8.343) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{O}_3$ & All pairs & IDW & 6.593 (3.643, 8.823) & 0.069 (0.012, 0.271) & -6.88 (-14.86, 8.43) \\
+$\mathrm{O}_3$ & All pairs & GFSC-UNet-HM & 6.274 (3.690, 8.223) & 0.185 (0.105, 0.292) & 3.19 (-1.89, 9.56) \\
+\addlinespace
+$\mathrm{O}_3$ & Top 25\% $|\Delta y|$ & SpatialMean & 12.216 (6.789, 15.858) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{O}_3$ & Top 25\% $|\Delta y|$ & IDW & 12.108 (6.412, 15.912) & 0.101 (0.006, 0.350) & 1.75 (-1.98, 12.66) \\
+$\mathrm{O}_3$ & Top 25\% $|\Delta y|$ & GFSC-UNet-HM & 11.808 (6.280, 15.491) & 0.222 (0.128, 0.383) & 6.56 (1.79, 16.97) \\
+\addlinespace
+\midrule
+$\mathrm{PM}_{2.5}$ & All pairs & SpatialMean & 13.933 (10.898, 16.405) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{PM}_{2.5}$ & All pairs & IDW & 14.090 (11.087, 16.470) & 0.051 (-0.058, 0.107) & -2.26 (-5.47, 0.09) \\
+$\mathrm{PM}_{2.5}$ & All pairs & GFSC-UNet-HM & 14.136 (11.467, 16.353) & 0.137 (0.033, 0.171) & -2.93 (-10.93, 0.76) \\
+\addlinespace
+$\mathrm{PM}_{2.5}$ & Top 25\% $|\Delta y|$ & SpatialMean & 25.261 (21.292, 27.382) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{PM}_{2.5}$ & Top 25\% $|\Delta y|$ & IDW & 25.250 (21.449, 27.199) & 0.072 (-0.126, 0.149) & 0.09 (-3.59, 2.82) \\
+$\mathrm{PM}_{2.5}$ & Top 25\% $|\Delta y|$ & GFSC-UNet-HM & 24.705 (21.497, 26.445) & 0.216 (0.044, 0.254) & 4.35 (-2.02, 7.19) \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\parbox{0.98\textwidth}{\footnotesize Values in parentheses are 95\% percentile intervals from 5,000 paired circular moving-block bootstrap replicates with a block length of 24 h. The same timestamp blocks and station pairs were used for all methods. SpatialMean has zero pairwise contrast, so its Pearson correlation is undefined and its skill is zero by definition. The target-specific leave-one-station-out means were not correlated across assembled folds because doing so induces a deterministic inverse perturbation.}
+\end{table*}

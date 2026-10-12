@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "version": "d3hm_exact_five_block_classical_baselines_v1",
+  "split_signature": "6bb6aedbc907b808706e73c9e8ed0cbbdf873d0db8a67afc2b3a788ef38bdd1b",
+  "pollutants": [
+    "no2",
+    "o3",
+    "pm25"
+  ],
+  "models": [
+    "SpatialMean",
+    "NearestNeighbor",
+    "IDW",
+    "KNN",
+    "OrdinaryKriging"
+  ],
+  "n_spatial_folds": 5,
+  "n_stations": 55,
+  "n_test_times": 108,
+  "expected_records_per_pollutant_model": 5940
+}

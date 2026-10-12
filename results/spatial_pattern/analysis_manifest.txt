@@ -1,0 +1,10 @@
+Spatial-anomaly and pairwise-contrast analysis completed.
+LOSO input: /etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/density_stress/D3HM/predictions
+Coordinate input: /etc/cj/boundary/d3_spatial_block_validation_v1/station_blocks.csv
+Bootstrap replicates: 5000
+Circular moving-block length: 24 h
+SpatialMean definition for these spatial-pattern diagnostics: zero spatial anomaly / zero pairwise contrast.
+Stored target-specific LOSO SpatialMean predictions are not used for cross-station correlation because they induce a deterministic inverse perturbation.
+no2: stations=55, timestamps=108, pairs=1485, distance quartiles=(0.319339, 0.483871, 0.671247), top-25% |delta y| threshold=6.000000
+o3: stations=55, timestamps=108, pairs=1485, distance quartiles=(0.319339, 0.483871, 0.671247), top-25% |delta y| threshold=4.000000
+pm25: stations=55, timestamps=108, pairs=1485, distance quartiles=(0.319339, 0.483871, 0.671247), top-25% |delta y| threshold=13.999999

@@ -1,0 +1,65 @@
+\begin{table*}[t]
+\centering
+\caption{Distance-stratified station-pair concentration-contrast reconstruction. Distance quartiles were fixed from the 1,485 unique station pairs and applied identically to all pollutants and methods.}
+\label{tab:pairwise_distance}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lllrrr}
+\toprule
+Pollutant & Stratum & Method & Pairwise RMSE (95\% CI) & Pearson $r$ (95\% CI) & Skill (\%, 95\% CI) \\
+\midrule
+$\mathrm{NO}_2$ & Dist. Q1 & SpatialMean & 5.126 (4.622, 5.594) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{NO}_2$ & Dist. Q1 & IDW & 5.330 (4.798, 5.817) & -0.167 (-0.208, -0.125) & -8.10 (-9.05, -7.06) \\
+$\mathrm{NO}_2$ & Dist. Q1 & GFSC-UNet-HM & 5.454 (4.990, 5.866) & 0.095 (-0.012, 0.174) & -13.18 (-20.98, -6.91) \\
+\addlinespace
+$\mathrm{NO}_2$ & Dist. Q2 & SpatialMean & 5.213 (4.700, 5.690) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{NO}_2$ & Dist. Q2 & IDW & 5.261 (4.732, 5.754) & 0.041 (-0.009, 0.087) & -1.84 (-3.35, -0.09) \\
+$\mathrm{NO}_2$ & Dist. Q2 & GFSC-UNet-HM & 5.299 (4.840, 5.716) & 0.214 (0.118, 0.280) & -3.30 (-11.02, 2.77) \\
+\addlinespace
+$\mathrm{NO}_2$ & Dist. Q3 & SpatialMean & 5.541 (5.001, 6.008) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{NO}_2$ & Dist. Q3 & IDW & 5.504 (4.952, 5.984) & 0.135 (0.054, 0.203) & 1.33 (-1.63, 4.33) \\
+$\mathrm{NO}_2$ & Dist. Q3 & GFSC-UNet-HM & 5.546 (5.037, 5.990) & 0.238 (0.128, 0.315) & -0.18 (-7.43, 6.12) \\
+\addlinespace
+$\mathrm{NO}_2$ & Dist. Q4 & SpatialMean & 5.798 (5.308, 6.240) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{NO}_2$ & Dist. Q4 & IDW & 5.647 (5.128, 6.118) & 0.225 (0.123, 0.308) & 5.15 (0.79, 9.58) \\
+$\mathrm{NO}_2$ & Dist. Q4 & GFSC-UNet-HM & 5.692 (5.173, 6.156) & 0.284 (0.177, 0.364) & 3.65 (-3.53, 11.02) \\
+\addlinespace
+\midrule
+$\mathrm{O}_3$ & Dist. Q1 & SpatialMean & 5.720 (3.497, 7.359) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{O}_3$ & Dist. Q1 & IDW & 6.171 (3.600, 8.075) & -0.110 (-0.151, 0.014) & -16.38 (-24.85, -5.77) \\
+$\mathrm{O}_3$ & Dist. Q1 & GFSC-UNet-HM & 5.816 (3.660, 7.429) & 0.044 (-0.031, 0.102) & -3.37 (-11.52, -0.62) \\
+\addlinespace
+$\mathrm{O}_3$ & Dist. Q2 & SpatialMean & 5.712 (3.661, 7.259) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{O}_3$ & Dist. Q2 & IDW & 5.851 (3.589, 7.553) & 0.087 (0.039, 0.214) & -4.90 (-11.87, 5.40) \\
+$\mathrm{O}_3$ & Dist. Q2 & GFSC-UNet-HM & 5.632 (3.625, 7.154) & 0.184 (0.116, 0.259) & 2.81 (-2.20, 7.32) \\
+\addlinespace
+$\mathrm{O}_3$ & Dist. Q3 & SpatialMean & 6.687 (3.847, 8.762) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{O}_3$ & Dist. Q3 & IDW & 6.820 (3.624, 9.148) & 0.104 (0.043, 0.317) & -4.00 (-12.14, 12.33) \\
+$\mathrm{O}_3$ & Dist. Q3 & GFSC-UNet-HM & 6.541 (3.682, 8.608) & 0.200 (0.115, 0.325) & 4.32 (-1.03, 12.00) \\
+\addlinespace
+$\mathrm{O}_3$ & Dist. Q4 & SpatialMean & 7.253 (4.134, 9.796) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{O}_3$ & Dist. Q4 & IDW & 7.420 (3.738, 10.295) & 0.114 (0.044, 0.397) & -4.64 (-13.31, 18.36) \\
+$\mathrm{O}_3$ & Dist. Q4 & GFSC-UNet-HM & 7.012 (3.777, 9.561) & 0.233 (0.139, 0.395) & 6.55 (0.24, 19.08) \\
+\addlinespace
+\midrule
+$\mathrm{PM}_{2.5}$ & Dist. Q1 & SpatialMean & 13.434 (10.302, 15.939) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q1 & IDW & 13.977 (10.791, 16.531) & -0.132 (-0.237, -0.072) & -8.24 (-10.39, -6.93) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q1 & GFSC-UNet-HM & 14.099 (11.176, 16.525) & -0.019 (-0.068, 0.005) & -10.14 (-17.05, -7.08) \\
+\addlinespace
+$\mathrm{PM}_{2.5}$ & Dist. Q2 & SpatialMean & 13.521 (10.513, 15.957) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q2 & IDW & 13.651 (10.656, 16.040) & 0.042 (-0.073, 0.101) & -1.94 (-4.65, 0.14) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q2 & GFSC-UNet-HM & 13.621 (10.930, 15.840) & 0.144 (0.050, 0.176) & -1.49 (-8.04, 1.70) \\
+\addlinespace
+$\mathrm{PM}_{2.5}$ & Dist. Q3 & SpatialMean & 14.079 (10.674, 16.870) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q3 & IDW & 14.140 (10.861, 16.815) & 0.093 (-0.033, 0.146) & -0.87 (-4.75, 1.77) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q3 & GFSC-UNet-HM & 14.079 (11.134, 16.583) & 0.182 (0.062, 0.215) & -0.00 (-8.74, 3.96) \\
+\addlinespace
+$\mathrm{PM}_{2.5}$ & Dist. Q4 & SpatialMean & 14.665 (11.942, 16.925) & -- & 0.00 (0.00, 0.00) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q4 & IDW & 14.577 (12.000, 16.736) & 0.143 (0.023, 0.205) & 1.20 (-3.18, 4.69) \\
+$\mathrm{PM}_{2.5}$ & Dist. Q4 & GFSC-UNet-HM & 14.722 (12.543, 16.599) & 0.199 (0.052, 0.247) & -0.77 (-10.55, 4.48) \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\parbox{0.98\textwidth}{\footnotesize Values in parentheses are 95\% percentile intervals from 5,000 paired circular moving-block bootstrap replicates with a block length of 24 h. The same timestamp blocks and station pairs were used for all methods. SpatialMean has zero pairwise contrast, so its Pearson correlation is undefined and its skill is zero by definition. The target-specific leave-one-station-out means were not correlated across assembled folds because doing so induces a deterministic inverse perturbation.}
+\end{table*}

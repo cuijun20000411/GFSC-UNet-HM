@@ -1,0 +1,56 @@
+{
+  "program": "GFSC-UNet D3-HM independent main",
+  "model_version": "gfsc_unet_d3_hybrid_mask_v1",
+  "mode": "full-field",
+  "seed": 42,
+  "device": "cuda",
+  "data_root": "/etc/cj/boundary/duoyuan/data",
+  "D3_reference_root": "/etc/cj/boundary/f3_direct_ablation_final_strict_v1/D3",
+  "output": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1",
+  "pollutants": [
+    "no2",
+    "o3",
+    "pm25"
+  ],
+  "architecture": {
+    "SCB_channel_attention": false,
+    "group_width": 8,
+    "group_dropout": 0.25,
+    "bottleneck_gated_adapter": true,
+    "decoder_gated_adapters": true
+  },
+  "training": {
+    "epochs": 150,
+    "patience": 15,
+    "batch_size": 32,
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05,
+    "mask_ratio": [
+      0.05,
+      0.25
+    ],
+    "switch_epoch": 50,
+    "masking_protocol": "balanced_random_nearest_block_v1",
+    "training_views": "balanced alternating random and nearest-station block masks",
+    "validation_views": "fixed random plus fixed nearest-station block masks",
+    "checkpoint_score": "equal mean of the two validation losses",
+    "validation_mask_seed": 42
+  },
+  "spatial_weights": {
+    "TV": {
+      "no2": 0.01,
+      "o3": 0.1,
+      "pm25": 0.05
+    },
+    "Laplacian": {
+      "no2": 0.01,
+      "o3": 0.01,
+      "pm25": 0.01
+    }
+  },
+  "interpretation": {
+    "LOSO_diagnostics": "quantitative held-out-station evidence",
+    "spatial_block": "quantitative contiguous held-out-region evidence",
+    "full_field": "qualitative spatial reconstruction; unmonitored grids have no reference truth"
+  }
+}

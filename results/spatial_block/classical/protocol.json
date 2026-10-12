@@ -1,0 +1,114 @@
+{
+  "version": "d3hm_exact_five_block_classical_baselines_v1",
+  "data_root": "/etc/cj/boundary/duoyuan/data",
+  "spatial_root": "/etc/cj/boundary/gfsc_unet_d3hm_a10_hybrid_mask_v1/spatial_block",
+  "output_root": "/etc/cj/boundary/gfsc_unet_d3hm_a10_hybrid_mask_v1/spatial_block/CLASSICAL_BASELINES",
+  "split_json": "/etc/cj/boundary/gfsc_unet_d3hm_a10_hybrid_mask_v1/spatial_block/D3HMA10/spatial_split_used.json",
+  "split_signature": "6bb6aedbc907b808706e73c9e8ed0cbbdf873d0db8a67afc2b3a788ef38bdd1b",
+  "outer_protocol": "the exact fixed five spatial blocks used by D3-HM",
+  "heldout_by_fold": [
+    [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      10,
+      11,
+      13,
+      14,
+      15
+    ],
+    [
+      0,
+      2,
+      8,
+      9,
+      12,
+      16,
+      17,
+      18,
+      19,
+      22,
+      26,
+      27,
+      29
+    ],
+    [
+      20,
+      24,
+      25,
+      31,
+      37,
+      39
+    ],
+    [
+      21,
+      23,
+      28,
+      30,
+      33,
+      34,
+      36,
+      44,
+      46,
+      47,
+      49,
+      54
+    ],
+    [
+      32,
+      35,
+      38,
+      40,
+      41,
+      42,
+      43,
+      45,
+      48,
+      50,
+      51,
+      52,
+      53
+    ]
+  ],
+  "models": [
+    "SpatialMean",
+    "NearestNeighbor",
+    "IDW",
+    "KNN",
+    "OrdinaryKriging"
+  ],
+  "pollutants": [
+    "no2",
+    "o3",
+    "pm25"
+  ],
+  "test_inputs": "same-time concentrations from stations in the other four blocks only",
+  "target_history_used": false,
+  "prediction_clipping": false,
+  "selection": {
+    "IDW_power_candidates": [
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "KNN_k_candidates": [
+      4,
+      6,
+      8,
+      12,
+      16,
+      24
+    ],
+    "criterion": "MAE on validation times and visible stations only",
+    "heldout_block_used_for_selection": false
+  },
+  "ordinary_kriging": {
+    "variogram_model": "spherical",
+    "fallback_on_numerical_failure": "SpatialMean"
+  }
+}

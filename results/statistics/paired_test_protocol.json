@@ -1,0 +1,152 @@
+{
+  "main_model": "D3HM",
+  "competitors": [
+    "IDW",
+    "RandomForest",
+    "ExtraTrees",
+    "XGBoost",
+    "PConvUNetCov",
+    "D3"
+  ],
+  "keys": [
+    "pollutant",
+    "station",
+    "time_idx"
+  ],
+  "strict_key_set_equality": true,
+  "truth_tolerance": {
+    "rtol": 2e-06,
+    "atol": 2e-05
+  },
+  "statistical_unit": "held-out station",
+  "primary_metric": "station RMSE",
+  "difference_direction": "competitor minus D3HM; positive favors D3HM",
+  "test": "two-sided Wilcoxon signed-rank, Pratt zero handling",
+  "effect_size": "matched-pairs rank-biserial correlation; positive favors D3HM",
+  "multiplicity": "Holm family-wise adjustment across all reported comparisons",
+  "bootstrap": {
+    "repeats": 10000,
+    "seed": 20260919
+  },
+  "sources": {
+    "D3HM": [
+      {
+        "file": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/loso/D3HM/predictions/no2_test_predictions.csv",
+        "sha256": "68fa3b04bd3a46b0b8fcb4456829130566a5d26e51e70d36843295988ae438dd",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/loso/D3HM/predictions/o3_test_predictions.csv",
+        "sha256": "884cba9acff87772e08460b8996b151d5fe95fec1e32b866d83d7493a4210790",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/loso/D3HM/predictions/pm25_test_predictions.csv",
+        "sha256": "3b3ae7589401b989ff0cfbcb0c8750d58e9881db9af50ccfaa49e0f96c47b94b",
+        "rows_loaded": 5940
+      }
+    ],
+    "IDW": [
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/no2_test_predictions.csv",
+        "sha256": "9c829b52278ebbc968eda9f797f222ab2c75a0e6b61e5ccb07301901fc188c63",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/o3_test_predictions.csv",
+        "sha256": "1694cfb11a071752cc384d3e5bd699d0d1dca6444bbd3ce0f229019ef1313c0b",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/pm25_test_predictions.csv",
+        "sha256": "79196214b0f7b926d34698d277790c1e4dca96ad4a2996a907f57aa4bb99e7e1",
+        "rows_loaded": 5940
+      }
+    ],
+    "RandomForest": [
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/no2_test_predictions.csv",
+        "sha256": "9c829b52278ebbc968eda9f797f222ab2c75a0e6b61e5ccb07301901fc188c63",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/o3_test_predictions.csv",
+        "sha256": "1694cfb11a071752cc384d3e5bd699d0d1dca6444bbd3ce0f229019ef1313c0b",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/pm25_test_predictions.csv",
+        "sha256": "79196214b0f7b926d34698d277790c1e4dca96ad4a2996a907f57aa4bb99e7e1",
+        "rows_loaded": 5940
+      }
+    ],
+    "ExtraTrees": [
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/no2_test_predictions.csv",
+        "sha256": "9c829b52278ebbc968eda9f797f222ab2c75a0e6b61e5ccb07301901fc188c63",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/o3_test_predictions.csv",
+        "sha256": "1694cfb11a071752cc384d3e5bd699d0d1dca6444bbd3ce0f229019ef1313c0b",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/pm25_test_predictions.csv",
+        "sha256": "79196214b0f7b926d34698d277790c1e4dca96ad4a2996a907f57aa4bb99e7e1",
+        "rows_loaded": 5940
+      }
+    ],
+    "XGBoost": [
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/no2_test_predictions.csv",
+        "sha256": "9c829b52278ebbc968eda9f797f222ab2c75a0e6b61e5ccb07301901fc188c63",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/o3_test_predictions.csv",
+        "sha256": "1694cfb11a071752cc384d3e5bd699d0d1dca6444bbd3ce0f229019ef1313c0b",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/baselines_final_strict_v1/predictions/pm25_test_predictions.csv",
+        "sha256": "79196214b0f7b926d34698d277790c1e4dca96ad4a2996a907f57aa4bb99e7e1",
+        "rows_loaded": 5940
+      }
+    ],
+    "PConvUNetCov": [
+      {
+        "file": "/etc/cj/boundary/pconv_covariate_final_strict_v1/predictions/no2_test_predictions.csv",
+        "sha256": "1c712b5b23aac7b759f28d310d07bcb10aed786d4da241abc7cbbc4f60df6238",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/pconv_covariate_final_strict_v1/predictions/o3_test_predictions.csv",
+        "sha256": "09c5a63691a7a3e3dc1bba0151bf31ce84df9dced28938cc2933276094bd584a",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/pconv_covariate_final_strict_v1/predictions/pm25_test_predictions.csv",
+        "sha256": "f882eeb3f677a81a99986685a19379edc41cb502d9aa91fbd1ac0229c67b6b17",
+        "rows_loaded": 5940
+      }
+    ],
+    "D3": [
+      {
+        "file": "/etc/cj/boundary/f3_direct_ablation_final_strict_v1/D3/predictions/no2_test_predictions.csv",
+        "sha256": "15c55e082c658df00d971aa59127757dcc96944d7d4cdecc0078ed5bf098922f",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/f3_direct_ablation_final_strict_v1/D3/predictions/o3_test_predictions.csv",
+        "sha256": "30dd912ba44d23a750065b416936e71ab2b5649d558dd06e10a935c08eff8e61",
+        "rows_loaded": 5940
+      },
+      {
+        "file": "/etc/cj/boundary/f3_direct_ablation_final_strict_v1/D3/predictions/pm25_test_predictions.csv",
+        "sha256": "e6b9cbafd84930d8db8ca0fbf2e099c2f4ad61d2ae791c632d44b85dc7bc7eb5",
+        "rows_loaded": 5940
+      }
+    ]
+  }
+}
