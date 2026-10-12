@@ -1,0 +1,33 @@
+{
+  "dependency": "/etc/cj/boundary/baseline_final_strict.py",
+  "device": "cuda",
+  "first_layer_mask": {
+    "auxiliary_channels": "valid study-grid mask",
+    "concentration_channel": "current observed-station mask"
+  },
+  "fold_target_scaling": "training times and non-held-out stations only",
+  "inner_validation": "deterministic masks on non-held-out stations only",
+  "input": "all 7 handcrafted/sparse channels plus all F covariates",
+  "loss": "same supervised reconstruction loss as baseline_final_strict.py",
+  "mask_curriculum": {
+    "final_ratio": 0.25,
+    "start_ratio": 0.05,
+    "switch_epoch": 50
+  },
+  "model": "PConvUNetCov",
+  "outer_protocol": "strict station-wise LOSO",
+  "outer_station_seen_during_training_or_selection": false,
+  "paper_label": "PConv-UNet+Cov (adapted)",
+  "prediction_clipping": false,
+  "seed": 42,
+  "temporal_history_at_outer_target": false,
+  "time_split": "preprocessed chronological train/validation/test split",
+  "training": {
+    "batch_size": 32,
+    "epochs": 150,
+    "learning_rate": 0.0001,
+    "patience": 15,
+    "weight_decay": 1e-05
+  },
+  "version": "strict_pconv_covariate_channel_mask_v1"
+}

@@ -1,0 +1,2 @@
+pollutant,model,n_stations,n_test_observations,pooled_MAE,pooled_RMSE,pooled_R2,mean_station_MAE,mean_station_MAE_CI_low,mean_station_MAE_CI_high,mean_station_RMSE,mean_station_RMSE_CI_low,mean_station_RMSE_CI_high,mean_station_R2,mean_station_R2_CI_low,mean_station_R2_CI_high,median_station_R2
+no2,PConvUNetCov,55,5940,5.264644925894828,6.659665042130267,0.4041456061678852,5.264644925894827,4.70386967340229,5.867423232944349,6.250145329105871,5.675596748072786,6.877731909344627,0.3340105102258652,0.15714000710728218,0.4792248321413398,0.49876110284151587

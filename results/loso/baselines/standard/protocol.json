@@ -1,0 +1,36 @@
+{
+  "version": "strict_baselines_v1",
+  "seed": 42,
+  "device": "cuda",
+  "models": [
+    "SpatialMean",
+    "NearestNeighbor",
+    "IDW",
+    "KNN",
+    "RBF",
+    "OrdinaryKriging",
+    "RandomForest",
+    "ExtraTrees",
+    "XGBoost",
+    "NeighborTransformer",
+    "SparseGridCNN",
+    "CovariateUNet",
+    "PartialConvUNet"
+  ],
+  "outer_protocol": "station-wise LOSO",
+  "inner_validation": "non-held-out stations only",
+  "time_split": "chronological train/val/test from preprocessing",
+  "fold_target_scaling": "training times and non-held-out stations only",
+  "temporal_history_at_outer_target": false,
+  "prediction_clipping": false,
+  "deep_mask_curriculum": [
+    0.05,
+    0.25,
+    50
+  ],
+  "notes": {
+    "SparseGridCNN": "adapted sparse-grid CNN; not exact CMSI",
+    "PartialConvUNet": "mask-renormalized partial convolutions",
+    "CovariateUNet": "plain U-Net using the same gridded inputs but no ASF/SCB"
+  }
+}

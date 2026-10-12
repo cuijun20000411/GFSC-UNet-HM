@@ -1,0 +1,16 @@
+{
+  "platform": "Linux-6.17.0-22-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "torch": "2.9.1+cu128",
+  "device": "cuda",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "cpu_threads": 1,
+  "warmup_runs": 50,
+  "timed_runs": 200,
+  "batch_size": 1,
+  "timing_scope": "forward pass only; data loading and host-device transfer excluded",
+  "memory_scope": "PyTorch allocated memory with model resident; incremental forward peak also reported",
+  "seed": 42
+}

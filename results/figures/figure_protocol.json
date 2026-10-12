@@ -1,0 +1,21 @@
+{
+  "model": "D3HM",
+  "quantitative_evidence": "strict 55-fold LOSO at held-out stations",
+  "representative_field_interpretation": "qualitative spatial pattern only; unmonitored grids have no reference truth",
+  "prediction_sources": {
+    "no2": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/loso/D3HM/predictions/no2_test_predictions.csv",
+    "o3": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/loso/D3HM/predictions/o3_test_predictions.csv",
+    "pm25": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/loso/D3HM/predictions/pm25_test_predictions.csv"
+  },
+  "full_field_sources": {
+    "no2": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/full_field/no2_D3HM_full_region_test_fields.npz",
+    "o3": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/full_field/o3_D3HM_full_region_test_fields.npz",
+    "pm25": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/full_field/pm25_D3HM_full_region_test_fields.npz"
+  },
+  "figure_formats": [
+    "png",
+    "pdf",
+    "svg"
+  ],
+  "dpi": 400
+}

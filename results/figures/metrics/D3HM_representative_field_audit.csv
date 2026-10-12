@@ -1,0 +1,4 @@
+pollutant,source,selected_array_index,original_time_idx,selection_rule,visible_station_mean,max_visible_station_preservation_error
+no2,/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/full_field/no2_D3HM_full_region_test_fields.npz,62,674,visible-station mean nearest quantile 0.5,17.390909177606755,0.0
+o3,/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/full_field/o3_D3HM_full_region_test_fields.npz,88,700,visible-station mean nearest quantile 0.5,13.63636365370317,0.0
+pm25,/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/full_field/pm25_D3HM_full_region_test_fields.npz,4,616,visible-station mean nearest quantile 0.5,48.65454531582919,0.0

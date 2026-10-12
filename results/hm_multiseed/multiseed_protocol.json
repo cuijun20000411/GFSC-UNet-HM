@@ -1,0 +1,32 @@
+{
+  "model": "D3HM",
+  "evaluation": "five-fold spatial-block holdout",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "reference_seed_reused_read_only": 42,
+  "reference_protocol_seed": 42,
+  "seed_separation": "D3 protocol provenance/grouping is validated with the fixed reference seed; D3-HM initialization, loaders, hybrid masks and group dropout use each training seed",
+  "spatial_split_json": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/spatial_block/D3HM/spatial_split_used.json",
+  "spatial_split_sha256": "ca9fe65c0331cc39e2d7341217e531c722d3d63bf233201966ce5eeda892846e",
+  "aggregation": "metrics are computed independently per seed; reported std uses ddof=1; no ensembling",
+  "sources": [
+    {
+      "seed": 42,
+      "root": "/etc/cj/boundary/gfsc_unet_d3_hybrid_mask_v1/spatial_block/D3HM",
+      "prediction_sha256": "a99af2d34ddda2cbd41bf1dbc3b8909c04035e8f9fe4f087f9d50e74589522e4"
+    },
+    {
+      "seed": 43,
+      "root": "/etc/cj/boundary/gfsc_unet_d3hm_multiseed_spatial_block_v1/seed_43/spatial_block/D3HM",
+      "prediction_sha256": "95a43462128e4d0e4eaca5517fbc6c8337215f6d0d22773760002d63107406e6"
+    },
+    {
+      "seed": 44,
+      "root": "/etc/cj/boundary/gfsc_unet_d3hm_multiseed_spatial_block_v1/seed_44/spatial_block/D3HM",
+      "prediction_sha256": "52732f002431ef3e1efe16d38e38a43a03bf72b38cf17bfc2f08d8bc0b567b7d"
+    }
+  ]
+}
