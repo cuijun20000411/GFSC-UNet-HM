@@ -1,0 +1,237 @@
+{
+  "model_version": "strict_f3_direct_ablation_v1",
+  "source_sha256": "b7e817e0dd933cdaf78a42451fbfe13e01b9e051495486323576be11eb69ffbd",
+  "seed": 42,
+  "ablation": {
+    "code": "D3",
+    "description": "F3 without SCB channel attention",
+    "use_distance": true,
+    "use_statistics": true,
+    "use_scb_attention": false,
+    "fixed_mask_ratio": false,
+    "tv_multiplier": 1.0,
+    "laplacian_multiplier": 1.0,
+    "grouping": "grouped",
+    "bottleneck_fusion": true,
+    "decoder_fusion": true,
+    "ablate_group": null
+  },
+  "pollutant": "no2",
+  "outer_protocol": "station-wise strict LOSO",
+  "inner_validation": "mask non-held-out training-fold stations only",
+  "fold_scaler": "training times and non-held-out stations only",
+  "time_split": "chronological train/validation/test from preprocessing",
+  "prediction_clipping": false,
+  "importance_beta": 0.0,
+  "curriculum_masking": true,
+  "fixed_training_mask_ratio": null,
+  "tv_multiplier": 1.0,
+  "laplacian_multiplier": 1.0,
+  "tv_weights": {
+    "no2": 0.01,
+    "o3": 0.1,
+    "pm25": 0.05
+  },
+  "laplacian_weights": {
+    "no2": 0.01,
+    "o3": 0.01,
+    "pm25": 0.01
+  },
+  "scb_channel_attention": false,
+  "feature_group_source": "auto structural grouping from training-time variation",
+  "resolved_groups": [
+    {
+      "name": "dynamic_spatial",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        37
+      ],
+      "kind": "spatial"
+    },
+    {
+      "name": "static_spatial",
+      "indices": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "kind": "spatial"
+    },
+    {
+      "name": "global_temporal",
+      "indices": [
+        38
+      ],
+      "kind": "global"
+    }
+  ],
+  "effective_groups": [
+    {
+      "name": "dynamic_spatial",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        37
+      ],
+      "kind": "spatial"
+    },
+    {
+      "name": "static_spatial",
+      "indices": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "kind": "spatial"
+    },
+    {
+      "name": "global_temporal",
+      "indices": [
+        38
+      ],
+      "kind": "global"
+    }
+  ],
+  "active_effective_groups": [
+    {
+      "name": "dynamic_spatial",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        37
+      ],
+      "kind": "spatial"
+    },
+    {
+      "name": "static_spatial",
+      "indices": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "kind": "spatial"
+    },
+    {
+      "name": "global_temporal",
+      "indices": [
+        38
+      ],
+      "kind": "global"
+    }
+  ],
+  "group_width": 8,
+  "condition_channels": 24,
+  "encoder_parameter_target_F3": 3272,
+  "encoder_parameter_actual": 3272,
+  "ungrouped_hidden_channels": null,
+  "group_dropout": 0.25,
+  "gate_initial_bias": -3.0,
+  "bottleneck_fusion": true,
+  "decoder_fusion": true,
+  "epochs": 150,
+  "patience": 15,
+  "batch_size": 32,
+  "learning_rate": 0.0001,
+  "weight_decay": 1e-05,
+  "start_mask_ratio": 0.05,
+  "final_mask_ratio": 0.25,
+  "curriculum_epoch": 50,
+  "protocol_signature": "9198a28f672e977b97b15986ba30f89bd1da0919981c84e25e6c572d7c439fd9"
+}
